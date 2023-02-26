@@ -6,51 +6,53 @@
         x:Class="Monitor.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="100" Width="220" Opacity="1" AllowsTransparency="True" Topmost="True"
-        Background="#B2474747" Loaded="Window_Loaded" BorderBrush="#4C7BCFFF" BorderThickness="1,1,1,1" HorizontalAlignment="Right" VerticalAlignment="Bottom" WindowStyle="None">
+        Background="#BF3D3D3D" Loaded="Window_Loaded" HorizontalAlignment="Right" VerticalAlignment="Bottom" WindowStyle="None">
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="35*" />
-            <ColumnDefinition Width="40*"/>
-            <ColumnDefinition Width="22*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
+    <Grid x:Name="mainGrid" Panel.ZIndex="0">
 
-        <!--Labels para nombrar cada cosa -->
-        <Label x:Name="txt_ping" Content="Ping:" HorizontalAlignment="Right" VerticalAlignment="Center" 
+        <Grid x:Name="tableGrid" Panel.ZIndex="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35*" />
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="22*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <!--Labels para nombrar cada cosa -->
+            <Label x:Name="txt_ping" Content="Ping:" HorizontalAlignment="Right" VerticalAlignment="Center"  
                Grid.Column="0" Grid.Row="0" FontSize="18" Style="{StaticResource FontDigital}" Foreground="#FF81DCFD"  Margin="26,0,0,0"/>
-        <Label x:Name="txt_subida" Content="Subida:" HorizontalAlignment="Right" VerticalAlignment="Center"
+            <Label x:Name="txt_subida" Content="Subida:" HorizontalAlignment="Right" VerticalAlignment="Center"
                Grid.Column="0" Grid.Row="1" FontSize="18" Style="{StaticResource FontDigital}" Foreground="#FF81DCFD" Margin="17,0,0,0"/>
-        <Label x:Name="txt_bajada" Content="Bajada:" HorizontalAlignment="Right" VerticalAlignment="Center"
+            <Label x:Name="txt_bajada" Content="Bajada:" HorizontalAlignment="Right" VerticalAlignment="Center"
                Grid.Column="0" Grid.Row="2" FontSize="18" Style="{StaticResource FontDigital}" Foreground="#FF81DCFD" Margin="14,0,0,0"/>
 
-        <!--Labels para mostrar valores-->
-        <Label x:Name="value_ping" Content="0" Style="{StaticResource FontDigital}"
+            <!--Labels para mostrar valores-->
+            <Label x:Name="value_ping" Content="0" Style="{StaticResource FontDigital}"
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Grid.Column="1" FontSize="18" Foreground="#FFFF6666"/>
-        <Label x:Name="value_subida" Content="0" Style="{StaticResource FontDigital}"
+            <Label x:Name="value_subida" Content="0" Style="{StaticResource FontDigital}"
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Grid.Column="1" Grid.Row="1" FontSize="18" Foreground="#FFFF6666"/>
-        <Label x:Name="value_bajada" Content="0" Style="{StaticResource FontDigital}"
+            <Label x:Name="value_bajada" Content="0" Style="{StaticResource FontDigital}"
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Grid.Column="1" Grid.Row="2" FontSize="18" Foreground="#FFFF6666"/>
 
-        <!--Labels para las medidas-->
-        <Label x:Name="measure_ping" Content="kbps" Style="{StaticResource FontDigital}"
+            <!--Labels para las medidas-->
+            <Label x:Name="measure_ping" Content="kbps" Style="{StaticResource FontDigital}"
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Grid.Column="3" FontSize="18" Foreground="#FFDEAD0B"/>
-        <Label x:Name="measure_subida" Content="kbps" Style="{StaticResource FontDigital}"
+            <Label x:Name="measure_subida" Content="kbps" Style="{StaticResource FontDigital}"
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Grid.Column="3" Grid.Row="1" FontSize="18" Foreground="#FFDEAD0B"/>
-        <Label x:Name="measure_bajada" Content="kbps" Style="{StaticResource FontDigital}"
+            <Label x:Name="measure_bajada" Content="kbps" Style="{StaticResource FontDigital}"
                HorizontalAlignment="Center" VerticalAlignment="Center"
                Grid.Column="3" Grid.Row="2" FontSize="18" Foreground="#FFDEAD0B"/>
-
-
+        </Grid>
+        
     </Grid>
-
+    
 </Window>

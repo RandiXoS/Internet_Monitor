@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -54,11 +55,11 @@ namespace Monitor
 
         private void Timer_ping_Tick(object sender, EventArgs e)
         {
-            value_ping.Content=x1.Next(9999);
+            value_ping.Content=x1.Next(200);
         }
         private void Timer_upload_Tick(object sender, EventArgs e)
         {
-            value_subida.Content = x2.Next(9999);
+            value_subida.Content = x2.Next(999);
         }
         private void Timer_download_Tick(object sender, EventArgs e)
         {
